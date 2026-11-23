@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#102b50" />
+  <title>Horman's Financial Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="toast" class="toast" role="status"></div>
+  <main id="authView" class="auth-shell">
+    <section class="auth-visual">
+      <div class="brand brand-light"><span class="brand-mark"><i></i><i></i><i></i></span><span><b>HORMAN'S</b><small>FINANCIAL INSTITUTE</small></span></div>
+      <div class="visual-copy"><span class="eyebrow">BANKING, MADE CLEAR</span><h1>Your money.<br><em>Your next move.</em></h1><p>A smarter way to manage everyday banking, track your money and plan what comes next.</p></div>
+      <div class="visual-bottom"><div class="trust-line"><span class="trust-dot"></span> A simpler banking experience</div><span>© 2026 Horman's Financial Institute</span></div>
+      <div class="visual-orb orb-one"></div><div class="visual-orb orb-two"></div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-top"><span class="mobile-brand">HORMAN'S <small>FINANCIAL INSTITUTE</small></span><label class="language-select"><span>Language</span><select id="authLanguage"><option value="en">English</option><option value="fr">Français</option></select></label></div>
+      <div class="auth-card">
+        <div class="auth-heading"><span class="eyebrow blue-eyebrow" id="authEyebrow">WELCOME BACK</span><h2 id="authTitle">Sign in to your account</h2><p id="authSubtitle">Enter your details to access your banking dashboard.</p></div>
+        <form id="loginForm" class="form-stack">
+          <label>Email address<input type="email" id="loginEmail" placeholder="you@example.com" autocomplete="username" required></label>
+          <label>Password<div class="password-wrap"><input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required><button type="button" class="text-button" data-toggle="loginPassword">Show</button></div></label>
+          <div class="form-between"><label class="check-label"><input type="checkbox"> <span>Remember me</span></label><a href="#" id="forgotLink">Forgot password?</a></div>
+          <button class="btn btn-primary btn-full" type="submit">Sign in <span>→</span></button>
+        </form>
+        <form id="registerForm" class="form-stack hidden">
+          <div class="form-grid"><label>First name<input id="firstName" placeholder="First name" required></label><label>Last name<input id="lastName" placeholder="Last name" required></label></div>
+          <label>Email address<input type="email" id="registerEmail" placeholder="you@example.com" required></label>
+          <label>Create password<div class="password-wrap"><input type="password" id="registerPassword" minlength="8" placeholder="At least 8 characters" required><button type="button" class="text-button" data-toggle="registerPassword">Show</button></div></label>
+          <label class="check-label terms"><input type="checkbox" id="agreeTerms" required><span>I agree to the terms and privacy policy.</span></label>
+          <button class="btn btn-primary btn-full" type="submit">Create account <span>→</span></button>
+        </form>
+
+      </div>
+      <div class="auth-footer"><span>Protected sign-in experience</span><span><i class="lock-icon">⌑</i> Secure access preview</span></div>
+    </section>
+  </main>
+
+  <main id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand sidebar-brand"><span class="brand-mark"><i></i><i></i><i></i></span><span><b>HORMAN'S</b><small>FINANCIAL INSTITUTE</small></span></div>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav id="mainNav" class="main-nav">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span> Overview</button>
+        <button class="nav-item" data-page="transactions"><span class="nav-icon">⇄</span> Transactions</button>
+        <button class="nav-item" data-page="payments"><span class="nav-icon">↗</span> Payments & transfers</button>
+        <button class="nav-item" data-page="cards"><span class="nav-icon">▤</span> Cards</button>
+        <div class="sidebar-label admin-only hidden">ADMINISTRATION</div>
+        <button class="nav-item admin-only hidden" data-page="customers"><span class="nav-icon">♙</span> Customers</button>
+        <button class="nav-item admin-only hidden" data-page="settings"><span class="nav-icon">⚙</span> Account controls</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">✳</div><b>Need a hand?</b><p>Our support team is here to help.</p><button class="help-link" id="supportBtn">Contact support ↗</button></div><button class="nav-item" data-page="profile"><span class="nav-icon">⚙</span> Settings</button><button class="nav-item logout" id="logoutBtn"><span class="nav-icon">↪</span> Sign out</button></div>
+    </aside>
+    <section class="main-area">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumb">Horman's <span>/</span> <b id="pageCrumb">Overview</b></div><div class="top-actions"><label class="language-select top-language"><select id="appLanguage"><option value="en">EN</option><option value="fr">FR</option></select></label><button class="icon-button notification" aria-label="Notifications">♧<i></i></button><button class="user-chip" id="profileShortcut"><span class="avatar" id="topAvatar">JD</span><span><b id="topName">Jordan Davis</b><small id="topRole">Personal account</small></span><span class="chevron">⌄</span></button></div></header>
+      <div class="page-content" id="pageContent"></div>
+      <footer class="app-footer">Horman's Financial Institute <span>•</span> Prototype environment <span class="footer-right">Need help? Contact support</span></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+//        <div class="auth-switch"><span id="switchText">New to Horman's?</span> <button id="switchAuth" class="text-button strong">Create an account</button></div>
+        <div class="demo-note"><span class="info-icon">i</span><span>Prototype preview: use <b>admin@hormans.demo</b> / <b>Admin123!</b> for the admin view, or create a customer account.</span></div>
