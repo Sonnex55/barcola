@@ -1,0 +1,228 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "firstName": "System",
+      "lastName": "Administrator",
+      "email": "admin@hormans.demo",
+      "role": "admin",
+      "password": {
+        "salt": "38d73da0f88ff9e79dd6a721c7116ba1",
+        "hash": "649577c45c5b491ee0167e475e9020f20f6bf96a81bcb6d4d50f46fbb00c9d144642b05567ea655721232afc6561b4401df8253207648ff818f3409b0661a8d8"
+      },
+      "status": "active",
+      "currency": "USD",
+      "createdAt": "2026-11-23T09:59:02.369Z"
+    },
+    {
+      "id": "usr_customer",
+      "firstName": "Jordan",
+      "lastName": "Davis",
+      "email": "jordan@example.com",
+      "role": "customer",
+      "password": {
+        "salt": "78b99d55b83fc5161fe4d9017d4eb719",
+        "hash": "c10e579b8bed61d5c0b9c779b32a8f674600a7d7a5396478822448dca770e6fb4d6f1893bee0f9808388dbaaed8098901a590c917645d94aff584298ea9731cf"
+      },
+      "status": "active",
+      "currency": "USD",
+      "createdAt": "2026-11-23T09:59:02.370Z"
+    },
+    {
+      "id": "usr_06e249a4-f371-4d57-a000-c7201b9d036a",
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "test-1795427991@example.test",
+      "role": "customer",
+      "password": {
+        "salt": "3f103490208d290a15b360a2664b2d7c",
+        "hash": "87a09d4bb05f930cd13b07bd9ed2265924b4ee45f4b914178855010036e1fe1f8827fc2ccd0376c605426c0bb56492154f742ba8ecf6cf70399c0381d48307bc"
+      },
+      "status": "active",
+      "currency": "USD",
+      "createdAt": "2026-11-23T09:59:51.331Z"
+    }
+  ],
+  "balances": {
+    "usr_admin": 0,
+    "usr_customer": 304350.75,
+    "usr_06e249a4-f371-4d57-a000-c7201b9d036a": 0
+  },
+  "ledger": [
+    {
+      "id": "56906fab-cfe1-4212-9cf6-84724e66ca7d",
+      "userId": "usr_customer",
+      "type": "credit",
+      "amount": 200000,
+      "description": "Admin adjustment: House Mortgage",
+      "reference": "HFI-EF65A1A48A",
+      "actor": "usr_admin",
+      "createdAt": "2026-11-23T11:42:56.285Z"
+    },
+    {
+      "id": "6444adea-b6c6-4f11-b6c6-54b6aff9b31c",
+      "userId": "usr_customer",
+      "type": "withdrawal",
+      "amount": 10000,
+      "status": "pending",
+      "description": "Withdrawal request — pending review",
+      "reference": "HFI-C350CFA0B5",
+      "actor": "usr_customer",
+      "createdAt": "2026-11-23T11:31:48.924Z"
+    },
+    {
+      "id": "6172edbf-4a69-40ec-ac59-341645aec520",
+      "userId": "usr_customer",
+      "type": "withdrawal",
+      "amount": 50000,
+      "status": "pending",
+      "description": "Withdrawal request — pending review",
+      "reference": "HFI-4DBF2B151F",
+      "actor": "usr_customer",
+      "createdAt": "2026-11-23T11:05:12.205Z"
+    },
+    {
+      "id": "7540067c-7378-47d0-bafe-9f3516108ac5",
+      "userId": "usr_customer",
+      "type": "credit",
+      "amount": 100000,
+      "description": "Admin adjustment: Salary",
+      "reference": "HFI-D1F3DAAA0F",
+      "actor": "usr_admin",
+      "createdAt": "2026-11-23T11:04:13.785Z"
+    },
+    {
+      "id": "e7f2cb0b-133d-4211-928f-9df6599fc135",
+      "userId": "usr_customer",
+      "type": "credit",
+      "amount": 100,
+      "description": "Admin adjustment: Payment",
+      "reference": "HFI-F6F3771A85",
+      "actor": "usr_admin",
+      "createdAt": "2026-11-23T11:03:42.238Z"
+    },
+    {
+      "id": "e5dd689b-c732-4c5f-9679-3baa54afb32f",
+      "userId": "usr_customer",
+      "type": "withdrawal",
+      "amount": 100,
+      "status": "pending",
+      "description": "Withdrawal request — pending review",
+      "reference": "HFI-D56BAF2500",
+      "actor": "usr_customer",
+      "createdAt": "2026-11-23T11:01:09.484Z"
+    },
+    {
+      "id": "871abf30-062f-4c03-bba0-29384f581b36",
+      "userId": "usr_customer",
+      "type": "withdrawal",
+      "amount": 1000,
+      "status": "pending",
+      "description": "Withdrawal request — pending review",
+      "reference": "HFI-44B2372559",
+      "actor": "usr_customer",
+      "createdAt": "2026-11-23T10:55:23.352Z"
+    },
+    {
+      "id": "txn_welcome",
+      "userId": "usr_customer",
+      "type": "credit",
+      "amount": 4250.75,
+      "description": "Demo opening balance",
+      "reference": "DEMO-OPEN-001",
+      "createdAt": "2026-11-23T09:59:02.370Z",
+      "actor": "system"
+    }
+  ],
+  "audit": [
+    {
+      "id": "be352e95-d30e-4e32-a99a-4329a57c2b18",
+      "actor": "usr_admin",
+      "action": "customer_balance_adjustment",
+      "details": {
+        "customerId": "usr_customer",
+        "amount": 200000,
+        "direction": "credit",
+        "reason": "House Mortgage"
+      },
+      "createdAt": "2026-11-23T11:42:56.285Z"
+    },
+    {
+      "id": "ed8a8a92-698a-49fb-8d08-054dd2c40709",
+      "actor": "usr_customer",
+      "action": "withdrawal_request_pending",
+      "details": {
+        "withdrawalId": "6444adea-b6c6-4f11-b6c6-54b6aff9b31c",
+        "amount": 10000,
+        "status": "pending"
+      },
+      "createdAt": "2026-11-23T11:31:48.925Z"
+    },
+    {
+      "id": "6ea15d5b-094e-48d9-bc73-2ca6a157e63a",
+      "actor": "usr_customer",
+      "action": "withdrawal_request_pending",
+      "details": {
+        "withdrawalId": "6172edbf-4a69-40ec-ac59-341645aec520",
+        "amount": 50000,
+        "status": "pending"
+      },
+      "createdAt": "2026-11-23T11:05:12.205Z"
+    },
+    {
+      "id": "c411b2e3-2446-4566-bca0-ce0f0f5cbcfe",
+      "actor": "usr_admin",
+      "action": "customer_balance_adjustment",
+      "details": {
+        "customerId": "usr_customer",
+        "amount": 100000,
+        "direction": "credit",
+        "reason": "Salary"
+      },
+      "createdAt": "2026-11-23T11:04:13.785Z"
+    },
+    {
+      "id": "a5b4530f-4824-4e0f-a976-6862927996b3",
+      "actor": "usr_admin",
+      "action": "customer_balance_adjustment",
+      "details": {
+        "customerId": "usr_customer",
+        "amount": 100,
+        "direction": "credit",
+        "reason": "Payment"
+      },
+      "createdAt": "2026-11-23T11:03:42.238Z"
+    },
+    {
+      "id": "415f60e2-e1a7-4ff9-842c-9af48a34fc45",
+      "actor": "usr_customer",
+      "action": "withdrawal_request_pending",
+      "details": {
+        "withdrawalId": "e5dd689b-c732-4c5f-9679-3baa54afb32f",
+        "amount": 100,
+        "status": "pending"
+      },
+      "createdAt": "2026-11-23T11:01:09.484Z"
+    },
+    {
+      "id": "18f213da-155a-4ea0-a78d-4f8ab68bb8f3",
+      "actor": "usr_customer",
+      "action": "withdrawal_request_pending",
+      "details": {
+        "withdrawalId": "871abf30-062f-4c03-bba0-29384f581b36",
+        "amount": 1000,
+        "status": "pending"
+      },
+      "createdAt": "2026-11-23T10:55:23.352Z"
+    },
+    {
+      "id": "ee69943e-da8f-4b6d-932c-40c7c9476e78",
+      "actor": "usr_06e249a4-f371-4d57-a000-c7201b9d036a",
+      "action": "account_registered",
+      "details": {
+        "email": "test-1795427991@example.test"
+      },
+      "createdAt": "2026-11-23T09:59:51.331Z"
+    }
+  ]
+}

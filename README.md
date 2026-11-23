@@ -1,26 +1,43 @@
-# Horman's Financial Institute — UI prototype
+# Horman's Financial Institute — full-stack demonstration
 
-A responsive front-end banking prototype built with HTML, CSS and vanilla JavaScript.
+A responsive banking UI with a Node.js backend, persistent JSON demo database, server-side password hashing, cookie sessions, customer/admin roles, recorded admin balance adjustments, audit events, and five UI languages.
 
-## Run it
-Open `index.html` in a browser. For a local development server, run `python -m http.server 8000` in this folder and visit `http://localhost:8000`.
+## Requirements
+- Node.js 18 or newer
+- No third-party npm packages required
 
-## Demo access
-- Admin: `admin@hormans.demo` / `Admin123!`
-- Sample customer: `jordan@example.com` / `Customer123!`
-- You can also register a new customer profile.
+## Run locally
+1. Extract this folder.
+2. Open a terminal in the project folder.
+3. Run `npm start` (or `node server.js`).
+4. Visit `http://localhost:3000`.
 
-## Included screens
-- Sign in and registration
-- Customer overview and account details
-- Transactions and CSV export
-- Simulated transfer flow
-- Virtual debit card preview
-- Admin customer management
-- Admin balance adjustment with reason and recorded adjustment entry
-- Account status controls
-- English/French language selector UI
-- Responsive layouts for mobile and desktop
+The server creates `data/db.json` automatically on first run. Keep this file private; it contains demo account data and password hashes.
 
-## Important prototype limitations
-This is a front-end demonstration. Data is stored in browser `localStorage`; it is not a secure database. Authentication is not production-grade, passwords are stored locally for demonstration, and payment/transfer actions do not move real money. The English/French selector currently demonstrates language selection but does not translate every screen. Before real-world banking use, replace the demo storage/authentication with a secure backend, password hashing, MFA, role-based authorization, an immutable double-entry ledger, audited balance adjustments, KYC/AML workflows, encrypted transport/storage, monitoring, and a licensed payment/banking provider. Do not enter real customer or financial information.
+## Demo credentials
+- Administrator: `admin@hormans.demo` / `Admin123!`
+- Customer: `jordan@example.com` / `Customer123!`
+
+For a non-demo environment, set `DEMO_ADMIN_PASSWORD` and `DEMO_CUSTOMER_PASSWORD` before the first start. The seed accounts are created only when no database file exists. Delete `data/db.json` to reset the local demo database.
+
+## Languages
+English, French, Spanish, Portuguese and German. Language selection is available on the sign-in and dashboard screens. Some less prominent system labels may remain in English.
+
+## Implemented API routes
+- `GET /api/health`
+- `POST /api/register`
+- `POST /api/login`
+- `POST /api/logout`
+- `GET /api/me`
+- `GET /api/transactions`
+- `POST /api/withdrawals` — creates a pending withdrawal request, records it in transaction history and directs the customer to Horman@hormansfinancialinstitute.com. Pending requests do not deduct the account balance.
+- `POST /api/transfers` — disabled in this demonstration; no money is moved.
+- `GET /api/admin/customers`
+- `POST /api/admin/balance-adjustments` — admin-only, requires a reason, writes a ledger entry and audit event.
+- `POST /api/admin/customer-status`
+- `GET /api/admin/audit`
+
+## Important safety and production limitations
+This is a development demonstration, not a real bank and not suitable for real customer information or funds. It does not connect to a bank, payment processor, card network, KYC/AML provider or regulated ledger. Transfers are disabled. Withdrawal requests can be submitted for demonstration purposes and remain pending; they do not move funds or deduct balances. Balance adjustments are demo ledger entries, not settlement of real funds.
+
+Before production use, replace the JSON store with a properly managed database, add TLS and secure cookie settings, CSRF protection, rate limiting, MFA, password reset and account recovery, robust input validation, monitoring, backups, independent security review, double-entry ledger controls, reconciliation, compliance/KYC/AML workflows, and a licensed banking/payment partner. Obtain legal and regulatory review before presenting this as a banking service. Never use the demo balances to represent actual customer deposits.
