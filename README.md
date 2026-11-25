@@ -1,16 +1,14 @@
-# Horman's Financial Institute — full-stack demonstration
+# Horman's Financial Institute — Next.js demonstration
 
-A responsive banking UI with a Node.js backend, persistent JSON demo database, server-side password hashing, cookie sessions, customer/admin roles, recorded admin balance adjustments, audit events, and five UI languages.
+A responsive banking UI with a Next.js frontend and API, persistent JSON demo database, server-side password hashing, cookie sessions, customer/admin roles, recorded admin balance adjustments, audit events, and five UI languages.
 
 ## Requirements
-- Node.js 18 or newer
-- No third-party npm packages required
+- Node.js 20.9 or newer
 
 ## Run locally
-1. Extract this folder.
-2. Open a terminal in the project folder.
-3. Run `npm start` (or `node server.js`).
-4. Visit `http://localhost:3000`.
+1. Install dependencies with `npm install`.
+2. Start the development server with `npm run dev`, or build and run with `npm run build` and `npm start`.
+3. Visit the URL printed in the terminal. Set `PORT` if the default port is busy (for example, `$env:PORT=3001; npm run dev` in PowerShell).
 
 The server creates `data/db.json` automatically on first run. Keep this file private; it contains demo account data and password hashes.
 

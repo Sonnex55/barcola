@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "description": "Full-stack banking interface demonstration",
-  "scripts": { "start": "node server.js", "dev": "node server.js" },
-  "engines": { "node": ">=18" }
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
 }
